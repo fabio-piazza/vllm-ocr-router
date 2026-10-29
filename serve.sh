@@ -4,8 +4,9 @@ set -euo pipefail
 : "${PORT:=8080}"
 : "${PDF_MODEL:=SeerRay-Lab/Xiaomi-OCR-0}"
 : "${IMAGE_MODEL:=lightonai/LightOnOCR-3-0.8B}"
+DEFAULT_IMAGE_MODEL_ARGS='--default-chat-template-kwargs {"enable_thinking":false}'
 : "${PDF_MODEL_ARGS:=}"
-: "${IMAGE_MODEL_ARGS:=--default-chat-template-kwargs {\"enable_thinking\":false}}"
+: "${IMAGE_MODEL_ARGS:=${DEFAULT_IMAGE_MODEL_ARGS}}"
 : "${GPU_FRACTION:=0.42}"
 : "${MAX_MODEL_LEN:=16384}"
 : "${DOWNLOAD_DIR:=/workspace/models}"
